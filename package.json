@@ -3,5 +3,21 @@
   "uuid": "9a9d7ef9-c81e-4894-bc2c-135db6f457ce",
   "creator": {
     "version": "3.8.7"
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "eslint assets/**/*.ts",
+    "lint:fix": "eslint assets/**/*.ts --fix",
+    "format": "prettier --write \"assets/**/*.ts\""
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "8.49.0",
+    "@typescript-eslint/parser": "8.49.0",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-import": "latest",
+    "prettier": "3.7.4",
+    "typescript-eslint": "8.49.0"
   }
 }
