@@ -84,6 +84,7 @@ export class MatchScene extends Component {
     if (!this._handView) return;
     const playable = this._hand.cards.map((c) => this._match.canPlay(c));
     this._handView.updatePlayability(playable);
+    this._handView.setCards(this._hand.cards, playable);
     this.hud.setMomentum(this._match.momentum, this._match.maxMomentum);
   }
 }

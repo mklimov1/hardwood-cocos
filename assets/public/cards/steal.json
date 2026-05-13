@@ -1,0 +1,10 @@
+{
+  "id": "steal",
+  "name": "Перехват",
+  "type": "defense",
+  "cost": 1,
+  "description": "Отменяет атаку соперника. Возьми 1 карту.",
+  "effects": [
+    { "trigger": "onPlay", "cancelOpponentAttack": true, "drawCards": 1 }
+  ]
+}

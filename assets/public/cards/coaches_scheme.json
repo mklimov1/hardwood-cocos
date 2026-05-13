@@ -1,0 +1,10 @@
+{
+  "id": "coaches_scheme",
+  "name": "Тренерская схема",
+  "type": "tactic",
+  "cost": 2,
+  "description": "Сыграй копию любой карты из сброса бесплатно.",
+  "effects": [
+    { "trigger": "onPlay", "playFromDiscard": true }
+  ]
+}

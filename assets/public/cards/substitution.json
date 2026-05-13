@@ -1,0 +1,10 @@
+{
+  "id": "substitution",
+  "name": "Замена",
+  "type": "tactic",
+  "cost": 1,
+  "description": "Сбрось руку, вытяни 4 карты.",
+  "effects": [
+    { "trigger": "onPlay", "discardHand": true, "drawCards": 4 }
+  ]
+}

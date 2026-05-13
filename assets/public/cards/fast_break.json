@@ -1,0 +1,11 @@
+{
+  "id": "fast_break",
+  "name": "Быстрый прорыв",
+  "type": "attack",
+  "cost": 1,
+  "description": "+2 очка. После атаки +1 Momentum.",
+  "effects": [
+    { "trigger": "onPlay", "score": 2 },
+    { "trigger": "afterAttack", "gainMomentum": 1 }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "timeout",
+  "name": "Тайм-аут",
+  "type": "tactic",
+  "cost": 0,
+  "description": "Возьми 2 карты. Лимит: 1 раз за четверть.",
+  "effects": [
+    { "trigger": "onPlay", "drawCards": 2 }
+  ],
+  "limit": { "perQuarter": 1 }
+}

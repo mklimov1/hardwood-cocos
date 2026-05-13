@@ -1,0 +1,11 @@
+{
+  "id": "alley_oop",
+  "name": "Эллей-уп",
+  "type": "attack",
+  "cost": 3,
+  "description": "+4 очка. После атаки возьми 1 карту.",
+  "effects": [
+    { "trigger": "onPlay", "score": 4 },
+    { "trigger": "afterAttack", "drawCards": 1 }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  "mid_range_shot",
+  "three_pointer",
+  "fast_break",
+  "pick_and_roll",
+  "alley_oop",
+  "floater",
+  "block",
+  "steal",
+  "zone_defense",
+  "intentional_foul",
+  "timeout",
+  "substitution",
+  "momentum_rush",
+  "crowd_pressure",
+  "coaches_scheme"
+]

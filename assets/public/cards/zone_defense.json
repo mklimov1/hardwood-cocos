@@ -1,0 +1,10 @@
+{
+  "id": "zone_defense",
+  "name": "Зонная защита",
+  "type": "defense",
+  "cost": 2,
+  "description": "Снижает результат любой атаки соперника в этой четверти на 1 очко.",
+  "effects": [
+    { "trigger": "onPlay", "reduceOpponentScoreBy": 1 }
+  ]
+}

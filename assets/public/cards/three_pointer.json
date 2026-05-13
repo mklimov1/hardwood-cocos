@@ -1,0 +1,13 @@
+{
+  "id": "three_pointer",
+  "name": "Трёшка",
+  "type": "attack",
+  "cost": 2,
+  "description": "+3 очка. Если соперник сыграл Блок — промах, 0 очков.",
+  "effects": [
+    { "trigger": "onPlay", "score": 3 }
+  ],
+  "interactions": {
+    "failsAgainst": ["block"]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "momentum_rush",
+  "name": "Momentum Rush",
+  "type": "tactic",
+  "cost": 0,
+  "description": "+2 Momentum прямо сейчас.",
+  "effects": [
+    { "trigger": "onPlay", "gainMomentum": 2 }
+  ]
+}

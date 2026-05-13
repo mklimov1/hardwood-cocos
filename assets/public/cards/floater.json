@@ -1,0 +1,13 @@
+{
+  "id": "floater",
+  "name": "Флоатер",
+  "type": "attack",
+  "cost": 1,
+  "description": "+2 очка. Не блокируется картой Блок.",
+  "effects": [
+    { "trigger": "onPlay", "score": 2 }
+  ],
+  "interactions": {
+    "immuneTo": ["block"]
+  }
+}

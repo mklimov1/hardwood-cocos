@@ -1,0 +1,10 @@
+{
+  "id": "pick_and_roll",
+  "name": "Пик-н-ролл",
+  "type": "attack",
+  "cost": 2,
+  "description": "+2 очка. Соперник не может сыграть Защиту в это владение.",
+  "effects": [
+    { "trigger": "onPlay", "score": 2, "preventOpponentDefense": true }
+  ]
+}

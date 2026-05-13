@@ -1,0 +1,10 @@
+{
+  "id": "mid_range_shot",
+  "name": "Бросок со средней",
+  "type": "attack",
+  "cost": 1,
+  "description": "+2 очка. Без условий.",
+  "effects": [
+    { "trigger": "onPlay", "score": 2 }
+  ]
+}

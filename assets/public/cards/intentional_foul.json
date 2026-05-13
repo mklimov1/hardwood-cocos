@@ -1,0 +1,13 @@
+{
+  "id": "intentional_foul",
+  "name": "Фол (намеренный)",
+  "type": "defense",
+  "cost": 0,
+  "description": "Останавливает Прорыв или Эллей-уп. Соперник берёт 1 очко вместо полного результата.",
+  "effects": [
+    { "trigger": "onPlay", "cancelOpponentAttack": true, "opponentScore": 1 }
+  ],
+  "interactions": {
+    "stops": ["fast_break", "alley_oop"]
+  }
+}

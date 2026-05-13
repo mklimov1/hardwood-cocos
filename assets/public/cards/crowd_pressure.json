@@ -1,0 +1,14 @@
+{
+  "id": "crowd_pressure",
+  "name": "Давление трибун",
+  "type": "tactic",
+  "cost": 0,
+  "description": "Если ты ведёшь — следующая четверть начинается с +1 Momentum.",
+  "effects": [
+    {
+      "trigger": "onNextQuarterStart",
+      "gainMomentum": 1,
+      "condition": { "type": "ifLeading" }
+    }
+  ]
+}

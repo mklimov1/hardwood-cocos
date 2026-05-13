@@ -1,0 +1,13 @@
+{
+  "id": "block",
+  "name": "Блок",
+  "type": "defense",
+  "cost": 1,
+  "description": "Отменяет атаку соперника. Не работает против Флоатера.",
+  "effects": [
+    { "trigger": "onPlay", "cancelOpponentAttack": true }
+  ],
+  "interactions": {
+    "failsAgainst": ["floater"]
+  }
+}
