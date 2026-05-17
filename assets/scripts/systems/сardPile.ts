@@ -1,14 +1,19 @@
-import { CardData } from '../cards/CardData';
+import { CardData } from 'db://assets/scripts/cards/CardData.ts';
 
-export class Hand {
+export class CardPile {
   private readonly _cards: CardData[] = [];
   private readonly _maxSize: number;
 
-  constructor(maxSize: number = 7) {
+  constructor(cards: CardData[] = [], maxSize: number = Infinity) {
+    this._cards = [...cards];
     this._maxSize = maxSize;
   }
 
-  public get cards(): readonly CardData[] {
+  public shuffle() {
+    /* cards shuffling is here */
+  }
+
+  public get cards(): CardData[] {
     return this._cards;
   }
 
@@ -17,7 +22,7 @@ export class Hand {
   }
 
   public get isFull(): boolean {
-    return this._cards.length >= this._maxSize;
+    return this.size >= this._maxSize;
   }
 
   public add(...cards: CardData[]): boolean {

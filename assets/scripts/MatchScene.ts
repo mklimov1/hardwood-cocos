@@ -11,9 +11,9 @@ import {
 } from 'cc';
 import { HandView } from './components/HandView';
 import { MatchHud } from './components/MatchHud';
-import { Hand } from './systems/hand';
 import { Match } from './systems/match';
 import { CardDatabase } from 'db://assets/scripts/cards/CardDatabase.ts';
+import { CardPile } from 'db://assets/scripts/systems/сardPile.ts';
 
 const { ccclass, property } = _decorator;
 
@@ -25,7 +25,7 @@ export class MatchScene extends Component {
   @property(MatchHud)
   private hud: MatchHud = null!;
 
-  private _hand: Hand = new Hand();
+  private _hand: CardPile = new CardPile([], 10);
   private _match: Match = new Match(3);
   private _handView: HandView | null = null;
 
