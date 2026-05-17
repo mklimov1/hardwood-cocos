@@ -1,5 +1,5 @@
-import { _decorator, Component, Label, Sprite, Color, UIOpacity } from 'cc';
-import { CardData, CardType } from '../data/card';
+import { _decorator, Color, Component, Label, Sprite, UIOpacity } from 'cc';
+import { CardData, CardType } from './../cards/CardData';
 
 const { ccclass, property } = _decorator;
 

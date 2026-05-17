@@ -1,4 +1,4 @@
-import { CardData } from '../data/card';
+import { CardData } from '../cards/CardData';
 
 export class Hand {
   private readonly _cards: CardData[] = [];
@@ -20,9 +20,9 @@ export class Hand {
     return this._cards.length >= this._maxSize;
   }
 
-  public add(card: CardData): boolean {
+  public add(...cards: CardData[]): boolean {
     if (this.isFull) return false;
-    this._cards.push(card);
+    this._cards.push(...cards);
     return true;
   }
 

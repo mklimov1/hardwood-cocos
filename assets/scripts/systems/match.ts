@@ -1,4 +1,4 @@
-import { CardData } from '../data/card';
+import { CardData } from '../cards/CardData';
 
 export class Match {
   private _momentum: number;

@@ -1,6 +1,6 @@
 import { _decorator, Component, Prefab, instantiate, Node, Vec3 } from 'cc';
 import { CardView } from './CardView';
-import { CardData } from '../data/card';
+import { CardData } from '../cards/CardData';
 
 const { ccclass, property } = _decorator;
 

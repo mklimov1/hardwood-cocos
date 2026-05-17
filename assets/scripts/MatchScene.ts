@@ -13,7 +13,7 @@ import { HandView } from './components/HandView';
 import { MatchHud } from './components/MatchHud';
 import { Hand } from './systems/hand';
 import { Match } from './systems/match';
-import { CardData, CardType } from './data/card';
+import { CardDatabase } from 'db://assets/scripts/cards/CardDatabase.ts';
 
 const { ccclass, property } = _decorator;
 
@@ -29,34 +29,12 @@ export class MatchScene extends Component {
   private _match: Match = new Match(3);
   private _handView: HandView | null = null;
 
-  start() {
-    const starting: CardData[] = [
-      { id: 'jumpshot', name: 'Jump Shot', type: CardType.Attack, cost: 1, description: 'Deal 4.' },
-      {
-        id: 'pick_and_roll',
-        name: 'Pick and Roll',
-        type: CardType.Attack,
-        cost: 2,
-        description: 'Deal 6.',
-      },
-      {
-        id: 'zone_d',
-        name: 'Zone Defense',
-        type: CardType.Defense,
-        cost: 2,
-        description: 'Block 5.',
-      },
-      { id: 'box_out', name: 'Box Out', type: CardType.Defense, cost: 1, description: 'Block 3.' },
-      {
-        id: 'alley_oop',
-        name: 'Alley-Oop',
-        type: CardType.Attack,
-        cost: 4,
-        description: 'Deal 12.',
-      },
-    ];
+  async start() {
+    await this.load();
+    const cards = CardDatabase.all();
+    const starting = cards.slice(0, 5);
 
-    for (const card of starting) this._hand.add(card);
+    this._hand.add(...starting);
 
     const handNode = instantiate(this.handPrefab);
     handNode.setParent(this.node);
@@ -71,6 +49,10 @@ export class MatchScene extends Component {
 
   onDestroy() {
     input.off(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+  }
+
+  private async load() {
+    await CardDatabase.loadAll();
   }
 
   private onKeyDown(event: EventKeyboard) {

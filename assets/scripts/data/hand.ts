@@ -1,4 +1,4 @@
-import { CardData } from './card';
+import { CardData } from '../cards/CardData';
 
 export interface HandState {
   cards: CardData[];

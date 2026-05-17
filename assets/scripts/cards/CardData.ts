@@ -1,8 +1,12 @@
-export type CardType = 'attack' | 'defense' | 'tactic';
-
 type LimitPeriod = 'perQuarter';
 
 type Limit = Record<LimitPeriod, number>;
+
+export enum CardType {
+  Attack = 'attack',
+  Defense = 'defense',
+  Tactic = 'tactic',
+}
 
 interface Effect {
   trigger: string;
@@ -25,8 +29,4 @@ export interface CardData {
   description: string;
   effects?: Effect[];
   interactions?: Record<string, string[]>;
-}
-
-export interface CardSet {
-  cards: CardData[];
 }
