@@ -7,5 +7,9 @@
       "dom"
     ],
     "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["assets/*"],
+    }
   }
 }

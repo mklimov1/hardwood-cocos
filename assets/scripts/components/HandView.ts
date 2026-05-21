@@ -55,4 +55,8 @@ export class HandView extends Component {
       this._cardNodes[i].getComponent(CardView)!.setPlayable(playable[i]);
     }
   }
+
+  get nodes() {
+    return this._cardNodes;
+  }
 }

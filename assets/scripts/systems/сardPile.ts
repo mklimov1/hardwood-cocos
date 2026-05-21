@@ -1,16 +1,10 @@
-import { CardData } from 'db://assets/scripts/cards/CardData.ts';
+import { CardData } from '@/scripts/cards/CardData.ts';
 
 export class CardPile {
   private readonly _cards: CardData[] = [];
-  private readonly _maxSize: number;
 
-  constructor(cards: CardData[] = [], maxSize: number = Infinity) {
+  constructor(cards: CardData[] = []) {
     this._cards = [...cards];
-    this._maxSize = maxSize;
-  }
-
-  public shuffle() {
-    /* cards shuffling is here */
   }
 
   public get cards(): CardData[] {
@@ -21,14 +15,8 @@ export class CardPile {
     return this._cards.length;
   }
 
-  public get isFull(): boolean {
-    return this.size >= this._maxSize;
-  }
-
-  public add(...cards: CardData[]): boolean {
-    if (this.isFull) return false;
+  public add(...cards: CardData[]) {
     this._cards.push(...cards);
-    return true;
   }
 
   public removeAt(index: number): CardData | null {
@@ -39,5 +27,9 @@ export class CardPile {
   public removeById(id: string): CardData | null {
     const index = this._cards.findIndex((c) => c.id === id);
     return index >= 0 ? this.removeAt(index) : null;
+  }
+
+  public removeFirst(count: number): CardData[] {
+    return this._cards.splice(0, Math.max(0, count));
   }
 }
