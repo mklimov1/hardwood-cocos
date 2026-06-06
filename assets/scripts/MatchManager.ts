@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, Prefab } from 'cc';
+import { _decorator, Component, Label, Prefab, Node } from 'cc';
 import { Entity, World } from './core/World';
 import { Side, SideData } from './ecs/side';
 import { Momentum, MomentumData, momentumRegenSystem } from './ecs/momentum';
@@ -9,10 +9,10 @@ const { ccclass, property } = _decorator;
 @ccclass('MatchManager')
 export class MatchManager extends Component {
   @property(Label)
-  momentumLabel: Label = null!;
+  private momentumLabel: Label = null!;
 
   @property(Prefab)
-  cardPrefab: Prefab = null!;
+  private cardPrefab: Prefab = null!;
 
   @property(HandView)
   private playerHand: HandView;
@@ -20,14 +20,16 @@ export class MatchManager extends Component {
   @property(HandView)
   private enemyHand: HandView;
 
+  @property(Node)
+  private cardDropZone: Node;
+
   private world: World;
 
   private player: Entity;
+
   private enemy: Entity;
 
-  private async load() {
-    await CardDatabase.loadAll();
-
+  private init() {
     this.world = new World();
 
     this.player = this.world.createEntity();
@@ -39,10 +41,11 @@ export class MatchManager extends Component {
     this.world.add<MomentumData>(this.enemy, Momentum, { value: 0, max: 10 });
   }
 
-  async start() {
-    await this.load();
+  private async load() {
+    await CardDatabase.loadAll();
+  }
 
-    this.syncView();
+  private create() {
     this.enemyHand.dealHand(this.world, [
       'alley_oop',
       'pick_and_roll',
@@ -57,6 +60,13 @@ export class MatchManager extends Component {
       'fast_break',
       'jump_shot',
     ]);
+  }
+
+  async start() {
+    this.init();
+    await this.load();
+    this.create();
+    this.syncView();
   }
 
   private syncView(): void {

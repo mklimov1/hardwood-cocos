@@ -208,6 +208,7 @@
       "__uuid__": "328def32-fbdb-43a0-a9e5-ee62136b905f",
       "__expectedType__": "cc.Prefab"
     },
+    "draggable": false,
     "_id": ""
   },
   {

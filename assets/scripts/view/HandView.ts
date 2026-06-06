@@ -1,4 +1,4 @@
-import { _decorator, Component, Layout, Prefab, instantiate } from 'cc';
+import { _decorator, Component, Layout, Prefab, instantiate, CCBoolean } from 'cc';
 import { Entity, World } from 'db://assets/scripts/core/World';
 import { Card, CardRef } from 'db://assets/scripts/ecs/card';
 import { CardDatabase } from 'db://assets/scripts/card/CardDatabase';
@@ -11,7 +11,7 @@ export class HandView extends Component {
   @property(Prefab)
   cardPrefab: Prefab = null;
 
-  @property(Boolean)
+  @property(CCBoolean)
   draggable = false;
 
   private layout: Layout = null;

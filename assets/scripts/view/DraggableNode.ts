@@ -4,7 +4,9 @@ const { ccclass } = _decorator;
 @ccclass('DraggableNode')
 export class DraggableNode extends Component {
   private startPos = new Vec3();
+
   private currentPos = new Vec3();
+
   private grabbed = false;
 
   private initIndex = -1;
