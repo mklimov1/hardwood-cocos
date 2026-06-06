@@ -4,6 +4,7 @@ import { Side, SideData } from './ecs/side';
 import { Momentum, MomentumData, momentumRegenSystem } from './ecs/momentum';
 import { CardDatabase } from './card/CardDatabase';
 import { HandView } from 'db://assets/scripts/view/HandView.ts';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('MatchManager')

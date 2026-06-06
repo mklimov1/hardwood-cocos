@@ -1,6 +1,7 @@
-# Игнорировать всё
+# ignores
 *
 
-# Кроме папки assets
+# excludes
 !assets/
 !assets/**
+!eslint.config.js
