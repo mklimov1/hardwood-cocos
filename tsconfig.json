@@ -6,7 +6,6 @@
       "es2020",
       "dom"
     ],
-    "allowImportingTsExtensions": true,
-    "baseUrl": ".",
+    "allowImportingTsExtensions": true
   }
 }
